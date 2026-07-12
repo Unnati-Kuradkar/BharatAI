@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile Saved - BharatAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="success-box">
+
+        <div class="brand">
+            🚀 BharatAI
+        </div>
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h1>Profile Created Successfully</h1>
+
+        <p>
+            Your BharatAI profile has been created successfully.
+            You can now explore personalized government schemes,
+            scholarships, loans, tenders and opportunities.
+        </p>
+
+        <div class="success-note">
+            🎯 Your personalized government opportunities are ready.
+        </div>
+
+        <div class="scheme-box">
+
+            <h3>🎯 Recommended For You</h3>
+
+        <ul>
+            {% for scheme in recommendations %}
+                <li>{{ scheme }}</li>
+            {% endfor %}
+        </ul>
+
+        </div>
+
+        <div class="success-buttons">
+
+            <a href="/dashboard">
+                <button type="button">
+                    📊 Explore Dashboard
+                </button>
+            </a>
+
+            <a href="/profile">
+                <button type="button">
+                    👤 Create New Profile
+                </button>
+            </a>
+
+        </div>
+
+        <div class="logout-section">
+
+            <a href="/">
+                <button type="button" class="logout-btn">
+                    🚪 Sign Out
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
