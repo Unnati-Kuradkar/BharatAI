@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>BharatAI Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h1>🚀 BharatAI</h1>
+
+</nav>
+
+<div class="assistant-container">
+
+    <h2>🤖 BharatAI Assistant</h2>
+
+    <form method="POST" action="/ask">
+
+        <input
+            type="text"
+            name="question"
+            placeholder="Ask about schemes, scholarships or loans..."
+            required>
+
+        <button type="submit">
+            Ask
+        </button>
+
+    </form>
+
+    {% if answer %}
+
+    <div class="answer-box">
+
+        <div class="response-box">
+
+            <h3>🤖 BharatAI Assistant</h3>
+
+            <div class="response-content">
+                <pre>{{ answer|safe }}</pre>
+            </div>
+
+        </div>
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
