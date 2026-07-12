@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BharatAI Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+
+        <h1>🚀 BharatAI</h1>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+            <a href="/eligibility">Check Eligibility</a>
+            <a href="/logout">Logout</a>
+
+        </div>
+
+    </nav>
+    
+
+    {% if profile %}
+
+    <div class="welcome-section">
+
+        <h1>
+            Welcome Back, {{ profile[1] }} 👋
+        </h1>
+
+        <p>
+            Your personalized government opportunities are ready.
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    {% if profile %}
+<div class="top-section">
+    <div class="profile-summary">
+
+        <h3>👤 Your Profile</h3>
+
+        <p><b>Name:</b> {{ profile[1] }}</p>
+
+        <p><b>Age:</b> {{ profile[2] }}</p>
+
+        <p><b>State:</b> {{ profile[3] }}</p>
+
+        <p><b>Occupation:</b> {{ profile[4] }}</p>
+
+        <p><b>Income:</b> ₹{{ profile[5] }}</p>
+
+    </div>
+
+    <div class="recommendation-card">
+
+        <h2>🎯 Recommended For You</h2>
+
+        <ul>
+
+            {% for scheme in recommendations %}
+            <li>
+                <a href="/scheme/{{ scheme }}">
+                {{ scheme }}
+                </a>
+            </li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+{% endif %}
+
+<div class="stats-section">
+
+    <div class="stat-card">
+        <h2>{{ recommendations|length }}</h2>
+        <p>📊 Eligible Schemes</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>2</h2>
+        <p>🎓 Scholarships</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>1</h2>
+        <p>💰 Loan Programs</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>2</h2>
+        <p>🏛️ State Benefits</p>
+    </div>
+
+</div>
+
+<div class="dashboard">
+
+
+    <form action="/search" method="GET" class="search-box">
+
+        <input
+            type="text"
+            name="query"
+            placeholder="Search schemes, scholarships, loans..."
+            required>
+
+        <button type="submit">
+            Search
+        </button>
+
+    </form>
+
+    <div class="dashboard-cards">
+
+        <a href="/assistant">
+
+        <div class="card">
+            <h3>🤖 AI Assistant</h3>
+            <p>Ask anything about government opportunities.</p>
+        </div>
+
+        </a>
+
+       <div class="card">
+
+        <h2>
+            <a href="/schemes">
+                🏛 Government Schemes
+            </a>
+        </h2>
+
+        <p>Browse all schemes.</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+            <a href="/scholarships">
+                🎓 Scholarships
+            </a>
+        </h2>
+
+        <p>Find scholarships.</p>
+
+    </div>
+
+    <div class="card">
+
+        <h2>
+            <a href="/tenders">
+                📄 Tenders
+            </a>
+        </h2>
+
+        <p>Explore tenders.</p>
+
+    </div>   
+
+</div>
+</div> 
+
+</body>
+</html>
