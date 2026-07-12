@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Eligibility Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+
+    <h1>🚀 BharatAI</h1>
+
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+</nav>
+
+<div class="success-box">
+
+    <h1>✅ Eligible Schemes</h1>
+
+    <p>
+        Based on your profile, you may be eligible for:
+    </p>
+
+    <div class="scheme-box">
+
+        <ul>
+
+            {% for scheme in recommendations %}
+            <li>{{ scheme }}</li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    <br>
+
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>
