@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ name }}</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>{{ name }}</h1>
+
+    {% if scheme %}
+
+    <p>
+        <b>Benefit:</b>
+        {{ scheme.benefit }}
+    </p>
+
+    <p>
+        <b>Eligibility:</b>
+        {{ scheme.eligibility }}
+    </p>
+
+    <p>
+        <b>Official Website:</b>
+        <a href="{{ scheme.website }}" target="_blank">
+            Apply Here
+        </a>
+    </p>
+
+    {% else %}
+
+    <p>Scheme details not available.</p>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/dashboard">
+        Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>
