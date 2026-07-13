@@ -27,3 +27,44 @@ if menu == "Home":
     - Loans
     - Personalized Recommendations
     """)
+
+elif menu == "Profile":
+
+    st.header("Create Your Profile")
+
+    name = st.text_input("Name")
+
+    age = st.number_input(
+        "Age",
+        min_value=1,
+        max_value=100
+    )
+
+    state = st.text_input("State")
+
+    occupation = st.selectbox(
+        "Occupation",
+        [
+            "Student",
+            "Farmer",
+            "Business",
+            "Other"
+        ]
+    )
+
+    income = st.number_input(
+        "Income",
+        min_value=0
+    )
+
+    if st.button("Save Profile"):
+
+        st.success("Profile Saved Successfully!")
+
+        st.write("### Your Details")
+
+        st.write("Name:", name)
+        st.write("Age:", age)
+        st.write("State:", state)
+        st.write("Occupation:", occupation)
+        st.write("Income:", income)
