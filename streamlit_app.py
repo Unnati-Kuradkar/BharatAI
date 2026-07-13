@@ -1,9 +1,17 @@
 import streamlit as st
+from database import (
+    create_database,
+    save_profile,
+    get_latest_profile,
+    get_recommended_schemes
+)
 
 st.set_page_config(
     page_title="BharatAI",
     layout="wide"
 )
+
+create_database()
 
 st.title("🇮🇳 BharatAI")
 st.subheader("AI Government Opportunities Assistant")
