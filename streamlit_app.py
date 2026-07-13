@@ -8,4 +8,22 @@ st.set_page_config(
 st.title("🇮🇳 BharatAI")
 st.subheader("AI Government Opportunities Assistant")
 
-st.success("Streamlit is working successfully!")
+menu = st.sidebar.selectbox(
+    "Navigation",
+    [
+        "Home",
+        "Profile",
+        "Dashboard"
+    ]
+)
+
+if menu == "Home":
+    st.write("""
+    Welcome to BharatAI!
+
+    Discover:
+    - Government Schemes
+    - Scholarships
+    - Loans
+    - Personalized Recommendations
+    """)
