@@ -1,5 +1,5 @@
 import streamlit as st
-from database import (
+from database.database import (
     create_database,
     save_profile,
     get_latest_profile,
