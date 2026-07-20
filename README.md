@@ -1,6 +1,6 @@
 # BharatAI – AI-Powered Government Scheme Recommendation and Citizen Assistance Platform
 
-**Author:** Dishant Kuradkar
+**Author:** Unnati Kuradkar
 **Affiliation:** MCA Student
 **Date:** July 2026
 
